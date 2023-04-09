@@ -20,5 +20,12 @@ export class TodosComponent implements OnInit{
       {text: "Valor2"},
     ]
   }
+  // método que maneja el evento click
+  addTodo(){
+    // añadir un elemento al array
+    this.todos.push({
+      text: "Texto"
+    })
+  }
 
 }

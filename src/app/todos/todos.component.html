@@ -3,6 +3,7 @@
   <p>Cadena: {{cadena}}</p>
   <p>todo.text: {{todo.text}}</p>
   <h3>Listado de tareas</h3>
+  <button (click)="addTodo()" >Add</button>
   <ul>
     <li *ngFor="let todo of todos">
       {{todo.text}}
