@@ -9,7 +9,7 @@ export class TodosComponent implements OnInit{
 
   public cadena: string = "Valor inicial";
   public todo: any = {
-    text: "Valor"
+    text: ""
   }
   // listado de datos a presentar
   public todos: any[] = [];
@@ -26,6 +26,14 @@ export class TodosComponent implements OnInit{
     this.todos.push({
       text: "Texto"
     })
+  }
+
+  addTodoForm(){
+    // añadir un elemento al array
+    this.todos.push({
+      text: this.todo.text
+    })
+    this.todo.text = ""
   }
 
 }
