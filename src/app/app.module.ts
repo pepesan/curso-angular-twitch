@@ -6,13 +6,17 @@ import { TodosComponent } from './components/todos/todos.component';
 import {FormsModule} from "@angular/forms";
 import { DirectivasComponent } from './components/directivas/directivas.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { PropiedadesComponent } from './components/propiedades/propiedades.component';
+import { UsaPropiedadesComponent } from './components/usa-propiedades/usa-propiedades.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     DirectivasComponent,
-    PipesComponent
+    PipesComponent,
+    PropiedadesComponent,
+    UsaPropiedadesComponent
   ],
   imports: [
     BrowserModule,
