@@ -10,6 +10,7 @@ import { PropiedadesComponent } from './components/propiedades/propiedades.compo
 import { UsaPropiedadesComponent } from './components/usa-propiedades/usa-propiedades.component';
 import {TodoService} from "./services/todo.service";
 import { UsaServicioComponent } from './components/usa-servicio/usa-servicio.component';
+import { UsaServicio2Component } from './components/usa-servicio2/usa-servicio2.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UsaServicioComponent } from './components/usa-servicio/usa-servicio.com
     PipesComponent,
     PropiedadesComponent,
     UsaPropiedadesComponent,
-    UsaServicioComponent
+    UsaServicioComponent,
+    UsaServicio2Component
   ],
   imports: [
     BrowserModule,
