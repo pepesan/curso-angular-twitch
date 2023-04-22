@@ -10,6 +10,8 @@ import { PropiedadesComponent } from './components/propiedades/propiedades.compo
 import { UsaPropiedadesComponent } from './components/usa-propiedades/usa-propiedades.component';
 import {TodoService} from "./services/todo.service";
 import { UsaServicioComponent } from './components/usa-servicio/usa-servicio.component';
+import { PactometroComponent } from './components/pactometro/pactometro.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { UsaServicioComponent } from './components/usa-servicio/usa-servicio.com
     PipesComponent,
     PropiedadesComponent,
     UsaPropiedadesComponent,
-    UsaServicioComponent
+    UsaServicioComponent,
+    PactometroComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]
