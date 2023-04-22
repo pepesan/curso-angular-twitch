@@ -8,6 +8,8 @@ import { DirectivasComponent } from './components/directivas/directivas.componen
 import { PipesComponent } from './components/pipes/pipes.component';
 import { PropiedadesComponent } from './components/propiedades/propiedades.component';
 import { UsaPropiedadesComponent } from './components/usa-propiedades/usa-propiedades.component';
+import {TodoService} from "./services/todo.service";
+import { UsaServicioComponent } from './components/usa-servicio/usa-servicio.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,14 @@ import { UsaPropiedadesComponent } from './components/usa-propiedades/usa-propie
     DirectivasComponent,
     PipesComponent,
     PropiedadesComponent,
-    UsaPropiedadesComponent
+    UsaPropiedadesComponent,
+    UsaServicioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
