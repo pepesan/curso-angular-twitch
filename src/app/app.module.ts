@@ -13,6 +13,7 @@ import { UsaServicioComponent } from './components/usa-servicio/usa-servicio.com
 import { UsaServicio2Component } from './components/usa-servicio2/usa-servicio2.component';
 import { PactometroComponent } from './components/pactometro/pactometro.component';
 import {HttpClientModule} from "@angular/common/http";
+import {PactometroService} from "./services/pactometro.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     HttpClientModule
   ],
-  providers: [TodoService],
+  providers: [TodoService, PactometroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
