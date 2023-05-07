@@ -15,6 +15,7 @@ import { PactometroComponent } from './components/pactometro/pactometro.componen
 import {HttpClientModule} from "@angular/common/http";
 import {PactometroService} from "./services/pactometro.service";
 import { PactometroSubscribeComponent } from './components/pactometro-subscribe/pactometro-subscribe.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PactometroSubscribeComponent } from './components/pactometro-subscribe/
     PactometroComponent,
     UsaServicioComponent,
     UsaServicio2Component,
-    PactometroSubscribeComponent
+    PactometroSubscribeComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
