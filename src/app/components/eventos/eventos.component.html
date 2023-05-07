@@ -1,5 +1,9 @@
 <div>
   <h2>Ejemplos de eventos</h2>
   <button id="event-button" (click)="botonPulsado($event)">Pulsame</button>
+  <div>
+    <input #box (keyup.enter)="onEnter(box.value)" />
+  </div>
+  <p>Value: {{value}}</p>
 </div>
 
