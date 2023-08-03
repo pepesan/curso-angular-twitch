@@ -1,0 +1,48 @@
+<div>
+  <h2>Formulario Simple</h2>
+  <form (submit)="onSubmit()" #basicForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"
+             required
+             minlength="4"
+             [(ngModel)]="model.name" name="name"
+             #name="ngModel">
+      <div [hidden]="name.valid || name.untouched"
+           class="alert alert-danger">
+        Name is invalid
+      </div>
+      <div [hidden]="name.valid || name.untouched || !name.control.errors?.['required']"
+           class="alert alert-danger">
+        Name is required
+      </div>
+      <div [hidden]="name.valid || name.untouched || !name.control.errors?.['minlength']"
+           class="alert alert-danger">
+        El campo debe tener al menos {{name.control.errors?.['minlength']?.['requiredLength']}} caracteres
+      </div>
+      <div>{{name.control.errors |json}}</div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!basicForm.form.valid">Submit</button>
+    <button type="button" class="btn btn-danger" (click)="basicForm.reset()">Reset</button>
+  </form>
+  <div>
+    <h3>Estados del Formularios</h3>
+    <ul>
+      <li>Valid: {{basicForm.valid}}</li>
+      <li>Invalid: {{basicForm.invalid}}</li>
+      <li>Touched: {{basicForm.touched}}</li>
+      <li>Untouched: {{basicForm.untouched}}</li>
+      <li>Pristine: {{basicForm.pristine}}</li>
+      <li>Dirty: {{basicForm.dirty}}</li>
+    </ul>
+    <h3>Estados del Campo</h3>
+    <ul>
+      <li>Valid: {{name.valid}}</li>
+      <li>Invalid: {{name.invalid}}</li>
+      <li>Touched: {{name.touched}}</li>
+      <li>Untouched: {{name.untouched}}</li>
+      <li>Pristine: {{name.pristine}}</li>
+      <li>Dirty: {{name.dirty}}</li>
+    </ul>
+  </div>
+</div>

@@ -16,6 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {PactometroService} from "./services/pactometro.service";
 import { PactometroSubscribeComponent } from './components/pactometro-subscribe/pactometro-subscribe.component';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { Form01Component } from './components/form01/form01.component';
+import { FormBasicoComponent } from './components/form-basico/form-basico.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { EventosComponent } from './components/eventos/eventos.component';
     UsaServicioComponent,
     UsaServicio2Component,
     PactometroSubscribeComponent,
-    EventosComponent
+    EventosComponent,
+    Form01Component,
+    FormBasicoComponent
   ],
   imports: [
     BrowserModule,
