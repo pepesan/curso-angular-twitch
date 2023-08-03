@@ -6,6 +6,7 @@
       <input type="text" class="form-control" id="name"
              required
              minlength="4"
+             maxlength="10"
              [(ngModel)]="model.name" name="name"
              #name="ngModel">
       <div [hidden]="name.valid || name.untouched"
@@ -18,9 +19,17 @@
       </div>
       <div [hidden]="name.valid || name.untouched || !name.control.errors?.['minlength']"
            class="alert alert-danger">
-        El campo debe tener al menos {{name.control.errors?.['minlength']?.['requiredLength']}} caracteres
+        El campo debe tener al menos
+        {{name.control.errors?.['minlength']?.['requiredLength']}} caracteres
+        y tiene {{name.control.errors?.['minlength']?.['actualLength']}}
       </div>
-      <div>{{name.control.errors |json}}</div>
+      <div [hidden]="name.valid || name.untouched || !name.control.errors?.['maxlength']"
+           class="alert alert-danger">
+        El campo debe tener menos de
+        {{name.control.errors?.['maxlength']?.['requiredLength']}} caracteres
+        y tiene {{name.control.errors?.['maxlength']?.['actualLength']}}
+      </div>
+      <div>name.control.errors{{name.control.errors |json}}</div>
     </div>
     <button type="submit" class="btn btn-success" [disabled]="!basicForm.form.valid">Submit</button>
     <button type="button" class="btn btn-danger" (click)="basicForm.reset()">Reset</button>
@@ -28,21 +37,21 @@
   <div>
     <h3>Estados del Formularios</h3>
     <ul>
-      <li>Valid: {{basicForm.valid}}</li>
-      <li>Invalid: {{basicForm.invalid}}</li>
-      <li>Touched: {{basicForm.touched}}</li>
-      <li>Untouched: {{basicForm.untouched}}</li>
-      <li>Pristine: {{basicForm.pristine}}</li>
-      <li>Dirty: {{basicForm.dirty}}</li>
+      <li [hidden]="basicForm.invalid">Valid: {{basicForm.valid}}</li>
+      <li [hidden]="basicForm.valid">Invalid: {{basicForm.invalid}}</li>
+      <li [hidden]="basicForm.untouched">Touched: {{basicForm.touched}}</li>
+      <li [hidden]="basicForm.touched">Untouched: {{basicForm.untouched}}</li>
+      <li [hidden]="basicForm.dirty">Pristine: {{basicForm.pristine}}</li>
+      <li [hidden]="basicForm.pristine">Dirty: {{basicForm.dirty}}</li>
     </ul>
     <h3>Estados del Campo</h3>
     <ul>
-      <li>Valid: {{name.valid}}</li>
-      <li>Invalid: {{name.invalid}}</li>
-      <li>Touched: {{name.touched}}</li>
-      <li>Untouched: {{name.untouched}}</li>
-      <li>Pristine: {{name.pristine}}</li>
-      <li>Dirty: {{name.dirty}}</li>
+      <li [hidden]="name.invalid">Valid: {{name.valid}}</li>
+      <li [hidden]="name.valid">Invalid: {{name.invalid}}</li>
+      <li [hidden]="name.untouched">Touched: {{name.touched}}</li>
+      <li [hidden]="name.touched">Untouched: {{name.untouched}}</li>
+      <li [hidden]="name.dirty">Pristine: {{name.pristine}}</li>
+      <li [hidden]="name.pristine">Dirty: {{name.dirty}}</li>
     </ul>
   </div>
 </div>
